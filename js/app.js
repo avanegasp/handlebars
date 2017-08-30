@@ -17,6 +17,26 @@ Handlebars.registerHelper('enumeracion', function(pvalor, operador, svalor){
 })
 
 
+$.ajax({
+  url:'https://restcountries-v1.p.mashape.com/all',
+  type: 'GET',
+  dataType: 'json',
+  headers: {'X-Mashape-Key': 'gNnoL8EHU9mshRMDwv1KttXMjgcmp1pBZVrjsnMsOQwgv4zLM8'}
+})
+
+.done(function(data){
+  var html= template({'country': data});
+  $('.container').html(html);
+
+})
+.fail(function(){
+  console.log("error")
+})
+.always(function(){
+  console.log("complete")
+})
+
+
 
 var personas = [
               {'nombre': 'Angie','apellido': 'Vanegas','correo': 'arco527@gmail.com'},
