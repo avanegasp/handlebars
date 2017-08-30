@@ -8,16 +8,20 @@
   </head>
   <body>
 
+    <div class="container">
 
-
-
-
-
-
-
-
-
-
+    </div>
+  <script id="entry-template" type="text/x-handlebars-template">
+    {{#each persona}}
+    <div class="entry">
+      <h1>{{this.nombre}}</h1>
+      <div class="body">
+        {{this.apellido}}
+        {{this.correo}}
+      </div>
+    </div>
+    {{/each}}
+  </script>
 
 
 
